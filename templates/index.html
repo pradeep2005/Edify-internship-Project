@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Popularity Prediction</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='modern-art.css') }}">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2 class="mb-4">Art Popularity Prediction</h2>
+        <form method="post" action="{{ url_for('result') }}">
+            <div class="mb-3">
+                <label for="popularity_score" class="form-label">Popularity Score</label>
+                <input type="number" step="any" class="form-control" id="popularity_score" name="popularity_score" required>
+            </div>
+            <div class="mb-3">
+                <label for="year" class="form-label">Year</label>
+                <input type="number" class="form-control" id="year" name="year" required>
+            </div>
+            <div class="mb-3">
+                <label for="month" class="form-label">Month</label>
+                <input type="number" class="form-control" id="month" name="month" min="1" max="12" required>
+            </div>
+            <div class="mb-3">
+                <label for="model_type" class="form-label">Model</label>
+                <select class="form-select" id="model_type" name="model_type">
+                    <option value="linear">Linear Regression</option>
+                    <option value="random_forest">Random Forest</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+        <a href="{{ url_for('home') }}" class="btn btn-secondary mt-3">Back to Home</a>
+    </div>
+</body>
+</html>
+    </div>
+</body>
+</html>
